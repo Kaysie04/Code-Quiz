@@ -1,0 +1,27 @@
+
+
+header h1 {
+    padding-top: 75px;
+}
+
+body {
+    text-align: center;
+}
+#time-display{
+    float:right;
+}
+
+#view-display {
+    float:left;
+}
+.button-style {
+    list-style: none;
+    background-color:#3399ff;
+    color:#ffffff;
+    border-radius: 10px;
+    width: 150px;  
+}
+
+section ol {
+list-style: none;
+}
