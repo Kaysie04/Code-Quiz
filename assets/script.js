@@ -86,6 +86,7 @@ var quizStart = function () {
         j = 0; j < questionArray[i].choices.length; j++) {
         var choicesDiv = document.createElement("button")
         choicesDiv.textContent = questionArray[i].choices[j]
+        choices.className = "button-style"
         choicesDiv.style.background = "#0000cc"
         choicesDiv.style.color= "#ffffff"
         choicesDiv.addEventListener("click", answerValidation)
@@ -117,8 +118,8 @@ var answerValidation = function (event) {
 function endQuiz () {
 
     // remove questions when quiz is over
-    //var questionDisplay = document.getElementById("question-section")
-    //questionDisplay.style.display = "none"
+    var questionDisplay = document.getElementById("question-id")
+    questionDisplay.style.display = "none"
 
     // remove display:none from CSS
     var displayFinalSection = document.getElementsByClassName("final-section")
