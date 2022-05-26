@@ -15,16 +15,18 @@
         </div>
 
         <div>
-            <p id="time-display"> Time</p>
+            <p id="time-display"></p>
         </div>
-
-        <h1>Coding Quiz Challenge</h1>
-        <p>
+        
+        <div id="quiz-title">
+            <h1> Coding Quiz Challenge</h1>
+            <p>
             Try to answer the following code-related questions within the time limit.
-            Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-        </p>
+            Keep in mind that incorrect answers will penalize your score/time by 5 seconds!
+            </p>
 
-        <button type="button" class="button-style" id="start-btn">Start Quiz!</button>
+            <button type="button" class="button-style" id="start-btn">Start Quiz!</button>
+        </div>
         </header>
 
   
@@ -32,8 +34,33 @@
         <section class="question-section"></section>
 
 <!-- final section-->
-    <section class="final-section"></section>
+    <section class="final-section">
+        <p>Quiz Complete!</p>
+        <p> Your Final Score is:</p>
+        <p>Enter your initials</p>
+        <button type="button" class="button-style" id="end-btn">Enter Results</button>  
+    </section>
 
     <script src = "assets/script.js"></script>
 </body>
 </html>
+
+
+
+   
+<!--var finalSection = document.querySelector(".final-section")
+
+var endQuiz = function () {
+
+    
+    quizCompleteDiv = document.createElement("div")
+    quizCompleteDiv.textContent = "Quiz Complete!"
+    finalSection.append(quizCompleteDiv)
+    scoreDiv = document.createElement("div")
+    scoreDiv.textContent = "Your final score is:"
+    finalSection.append(scoreDiv)
+    initialsDiv = document.createElement("div")
+    initialsDiv.textContent = "Enter your initials"
+    finalSection.append(initialsDiv)
+    submitBtnDiv = document.createElement("button")
+    finalSection.append(submitBtnDiv)

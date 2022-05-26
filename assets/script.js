@@ -1,17 +1,23 @@
-    // timer interval
+    
+   
+   // style buttons
+document.querySelector("button").style.background = "#0000cc"
+
+
+   // timer interval
     var time = 60
-    setInterval(function() {
-        var timer = document.getElementById("#time-display")
-        time = time - 1
-        timer.textContent = time
-    }, 1000)
+    function setTimer() {
+        setInterval(function() {
+            var timer = document.getElementById("time-display")
+            if (time > 0 && i < 5 ) {
+            time = time - 1
+            timer.textContent = "Time Remaining: " + time
 
-
-// style buttons
-document.querySelector("button").style.background = "#79d2a6";
-//choicesDiv.style.background = "#79d2a6";
-//choicesDiv.style.border-radius = 10px;
-//width: 150px; 
+            }else {
+            endQuiz()
+           }
+        }, 1000)
+    }
 
 // set html section variables
 var submitBtn = document.querySelector("#start-btn")
@@ -55,13 +61,12 @@ var i = 0
 // start quiz function
 
 var quizStart = function () {
-
+    setTimer()
 
     if (i > 4) {
         endQuiz()
         return;
     }
-    console.log({ i })
     var questionOneDiv = document.createElement("div")
     questionOneDiv.textContent = questionArray[i].question
     questionSection.append(questionOneDiv)
@@ -70,6 +75,9 @@ var quizStart = function () {
         j = 0; j < questionArray[i].choices.length; j++) {
         var choicesDiv = document.createElement("button")
         choicesDiv.textContent = questionArray[i].choices[j]
+        choicesDiv.style.background = "#0000cc"
+        choicesDiv.style.color= "#ffffff"
+        choicesDiv.style.
         choicesDiv.addEventListener("click", answerValidation)
         questionSection.append(choicesDiv)
     }
@@ -85,35 +93,22 @@ var answerValidation = function (event) {
 
     }
     else {
-        alert("Incorrect, time has been subracted by 10 seconds")
-        time -=10
+        alert("Incorrect, time has been subracted by 5 seconds")
+        time -=5
     }
 
     i++
     questionSection.innerHTML = ""
     quizStart()
 
-};
-
-// end quiz section
-
-var endQuiz = function () {
-
-    var finalSection = document.querySelector(".final-section")
-    quizCompleteDiv = document.createElement("div")
-    quizCompleteDiv.textContent = "Quiz Complete!"
-    finalSection.append(quizCompleteDiv)
-    scoreDiv = document.createElement("div")
-    scoreDiv.textContent = "Your final score is:"
-    finalSection.append(scoreDiv)
-    initialsDiv = document.createElement("div")
-    initialsDiv.textContent = "Enter your initials"
-    finalSection.append(initialsDiv)
-    submitBtnDiv = document.createElement("button")
-    finalSection.append(submitBtnDiv)
-    console.log("this is working")
 }
 
-submitBtn.addEventListener("click", quizStart, setInterval)
+// end quiz section
+function endQuiz () {
+    var displayFinalSection = document.getElementsByClassName("final-section")
+    finalSection.classList.remove("final-section");
+  }
+
+submitBtn.addEventListener("click", quizStart)
 
 
