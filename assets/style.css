@@ -42,6 +42,11 @@ body {
     font-size: 20px;
 }
 
+#view-display {
+    text-decoration: none;
+    color:#0000cc;
+}
+
 /* questions */
 
 .question-section {
