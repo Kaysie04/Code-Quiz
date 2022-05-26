@@ -18,6 +18,7 @@ function titleDisplay() {
             timer.textContent = "Time Remaining: " + time
 
             }else {
+            clearInterval(setTimer)
             endQuiz()
            }
         }, 1000)
@@ -28,6 +29,7 @@ function titleDisplay() {
 var submitBtn = document.querySelector("#start-btn")
 var questionSection = document.querySelector(".question-section")
 var finalSection = document.querySelector(".final-section")
+var highScoreSection = document.querySelector(".highscore-page")
 
 
 // set question variables
@@ -71,6 +73,7 @@ var quizStart = function () {
     setTimer()
 
     if (i > 4) {
+        clearInterval(setTimer)
         endQuiz()
         return;
     }
@@ -112,6 +115,7 @@ var answerValidation = function (event) {
 
 // end quiz section
 function endQuiz () {
+    clearInterval(setTimer)
 
     // remove questions when quiz is over
     var questionDisplay = document.getElementById("question-id")
@@ -119,12 +123,17 @@ function endQuiz () {
 
     // remove display:none from CSS
     var displayFinalSection = document.getElementsByClassName("final-section")
-    finalSection.classList.remove("final-section");
+    finalSection.classList.remove("final-section")
 
+    var displayHighScoreSection = document.getElementsByClassName("highscore-page")
+    highScoreSection.classList.remove("highscore-page")
+
+    // add input for initials at the end of the game
     var input = document.createElement("input")
     input.setAttribute('type', 'text')
     var enterInitials = document.getElementById("initials")
     enterInitials.append(input)
+    //debugger;
   }
 
 submitBtn.addEventListener("click", quizStart)
