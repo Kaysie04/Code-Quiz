@@ -1,4 +1,10 @@
 
+// style buttons
+document.querySelector("button").style.background= "#79d2a6";
+//choicesDiv.style.background = "#79d2a6";
+//choicesDiv.style.border-radius = 10px;
+//width: 150px; 
+
 var submitBtn = document.querySelector("#start-btn")
 var questionSection = document.querySelector(".question-section")
 var finalSection = document.querySelector(".final-section")
@@ -52,7 +58,7 @@ var quizStart = function () {
             questionSection.append(choicesDiv)
         }   
 }
-    
+    // check aswer section
 var answerValidation = function (event) { 
     if (event.target.textContent === questionArray[i].answer) {
         alert("CORRECT!")
@@ -61,13 +67,13 @@ var answerValidation = function (event) {
         alert("Incorrect, time has been subracted by 10 seconds")
     }
     
-     if  (i===5) {
-         break;
-     }else{
+     //if  (i===5) {
+        // break;
+    // }else{
     i++
     questionSection.innerHTML = ""
      quizStart ()   
-     }     
+       
 };
 
 // end quiz section
