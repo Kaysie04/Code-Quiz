@@ -25,3 +25,8 @@ body {
 section ol {
 list-style: none;
 }
+
+.final-section {
+    display: none;
+    /* remove class on element at the end of the quiz*/
+}
