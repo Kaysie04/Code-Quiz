@@ -1,8 +1,4 @@
     
-   
-   // style buttons
-
-document.querySelector("button").style.background = "#0000cc"
 
 // remove title page when quiz starts
 
@@ -90,7 +86,7 @@ var quizStart = function () {
         choicesDiv.className = "button-style"
         choicesDiv.addEventListener("click", answerValidation)
         questionSection.append(choicesDiv)
-        debugger;
+    
     }
 
 }
@@ -124,6 +120,15 @@ function endQuiz () {
     // remove display:none from CSS
     var displayFinalSection = document.getElementsByClassName("final-section")
     finalSection.classList.remove("final-section");
+
+    var input = document.createElement("input")
+    input.setAttribute('type', 'text')
+    var enterInitials = document.getElementById("initials")
+    enterInitials.append(input)
   }
 
 submitBtn.addEventListener("click", quizStart)
+
+
+
+

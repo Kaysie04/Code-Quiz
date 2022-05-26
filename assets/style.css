@@ -1,5 +1,5 @@
 
-
+/* top of page */
 header h1 {
     padding-top: 75px;
 }
@@ -14,13 +14,29 @@ body {
 #view-display {
     float:left;
 }
+
+/* buttons */
 .button-style {
     list-style: none;
     background-color:#0000cc;
     color:#e6ffe6;
-    border-radius: 10px;
+    border-radius: 7px;
     width: 175px; 
+    border: none;
+    padding: 5px;
+    margin: 10px;
 }
+
+.button-style:active{
+    background-color: #cc00ff;
+
+}
+
+.button-style:hover {
+    background-color:#cc00ff;
+}
+
+/* questions */
 
 .question-section {
 padding-top: 200px;
@@ -34,13 +50,19 @@ section ol {
 list-style: none;
 }
 
+/* bottom of page */
+
 .final-section {
     display: none;
-    /* remove class on element at the end of the quiz*/
 }
 
 #result-section {
     font-size: 25px;
     padding-top:200px;
 }
+ #result-title {
+     font-size: 35px;
+     font-weight:bold;
+ }
+
 
