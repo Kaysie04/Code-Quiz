@@ -30,3 +30,8 @@ list-style: none;
     display: none;
     /* remove class on element at the end of the quiz*/
 }
+
+#result-section {
+    font-size: 25px;
+}
+

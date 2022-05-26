@@ -1,10 +1,18 @@
     
    
    // style buttons
+
 document.querySelector("button").style.background = "#0000cc"
 
+// remove title page when quiz starts
+
+function titleDisplay() {
+    var quizTitleDisplay  = document.getElementById("quiz-title")
+    quizTitleDisplay.style.display = "none"
+}
 
    // timer interval
+
     var time = 60
     function setTimer() {
         setInterval(function() {
@@ -20,12 +28,14 @@ document.querySelector("button").style.background = "#0000cc"
     }
 
 // set html section variables
+
 var submitBtn = document.querySelector("#start-btn")
 var questionSection = document.querySelector(".question-section")
 var finalSection = document.querySelector(".final-section")
 
 
 // set question variables
+
 var questionOne = {
     question: "Commonly used data types DO NOT include:",
     choices: ["A. strings ", "B. booleans", "C. alerts", "D. numbers"],
@@ -61,6 +71,7 @@ var i = 0
 // start quiz function
 
 var quizStart = function () {
+    titleDisplay()
     setTimer()
 
     if (i > 4) {
@@ -77,7 +88,6 @@ var quizStart = function () {
         choicesDiv.textContent = questionArray[i].choices[j]
         choicesDiv.style.background = "#0000cc"
         choicesDiv.style.color= "#ffffff"
-        choicesDiv.style.
         choicesDiv.addEventListener("click", answerValidation)
         questionSection.append(choicesDiv)
     }
@@ -105,10 +115,14 @@ var answerValidation = function (event) {
 
 // end quiz section
 function endQuiz () {
+
+    // remove questions when quiz is over
+    //var questionDisplay = document.getElementById("question-section")
+    //questionDisplay.style.display = "none"
+
+    // remove display:none from CSS
     var displayFinalSection = document.getElementsByClassName("final-section")
     finalSection.classList.remove("final-section");
   }
 
 submitBtn.addEventListener("click", quizStart)
-
-
