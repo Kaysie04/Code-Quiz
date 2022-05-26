@@ -80,17 +80,17 @@ var quizStart = function () {
     }
     var questionOneDiv = document.createElement("div")
     questionOneDiv.textContent = questionArray[i].question
+    questionOneDiv.className = "question-div"
     questionSection.append(questionOneDiv)
 
     for (
         j = 0; j < questionArray[i].choices.length; j++) {
         var choicesDiv = document.createElement("button")
         choicesDiv.textContent = questionArray[i].choices[j]
-        choices.className = "button-style"
-        choicesDiv.style.background = "#0000cc"
-        choicesDiv.style.color= "#ffffff"
+        choicesDiv.className = "button-style"
         choicesDiv.addEventListener("click", answerValidation)
         questionSection.append(choicesDiv)
+        debugger;
     }
 
 }
