@@ -118,7 +118,8 @@ var answerValidation = function (event) {
     quizStart()
 }
 
-// end quiz section
+    //quiz complete section
+
 function endQuiz () {
     clearInterval(setTimer)
 
@@ -130,32 +131,56 @@ function endQuiz () {
     var displayFinalSection = document.getElementsByClassName("final-section")
     finalSection.classList.remove("final-section")
 
+    // remove timer display
+    var timerDisplay = document.getElementById("time-display")
+    timerDisplay.style.display = "none"
+
 
     // add input for initials at the end of the game
     var input = document.createElement("input")
     input.setAttribute('type','text')
     var enterInitials = document.getElementById("initials")
     enterInitials.append(input)
+
+    // the final score needs to be displayed
+    var finalScoreSection = document.getElementById("score")
+    var finalScoreDiv = document.createElement("div")
+    finalScoreDiv.textContent = time
+    finalScoreSection.append(finalScoreDiv)
+    
+
+    // when I click the enter results-btn I want the input to be saved
+
+    //  when I click the enter results button it goes to the enter results function
   }
 
-   // highscore section
-  function enterResults() {
+   // ENTER RESULTS SECTION 
 
-      // highscore section will now display
+     // highscore section will now display ////////
+    // I want the quiz complete display to go away ///////
+    // time display removed ////////
+    
+    // I want the page to display the high scores
+   
+    // restyle the highscore page
+    
+
+    function enterResults() {
+    
     var displayHighScoreSection = document.getElementsByClassName("highscore-page")
     highScoreSection.classList.remove("highscore-page")
-  }
 
+    var resultDisplay = document.getElementById("result-section")
+    resultDisplay.style.display = "none"
+  }
   
 
 
 
-    // display of highscores (input results)
-
-    // return to quiz-btn will go back to start of quiz (add another event listener)
 
     // clear highscores will delete the input data but stay on current page
-
+    
+    // clear highscore button that will delete the input data
 
   
 
@@ -164,8 +189,6 @@ function endQuiz () {
 
   // button that starts the quiz
   submitBtn.addEventListener("click", quizStart)
-
-
   
   // button that saves the initial input
  enterResultsBtn.addEventListener("click", enterResults)
@@ -175,7 +198,7 @@ document.getElementById("refresh-btn").onclick = function () {
     location.href = "https://kaysie04.github.io/Code-Quiz/";  
 };
 
-// clear highscore button that will delete the input data
+
 
 
 
