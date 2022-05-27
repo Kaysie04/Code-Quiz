@@ -17,19 +17,24 @@ function titleDisplay() {
             time = time - 1
             timer.textContent = "Time Remaining: " + time
 
-            }else {
-            clearInterval(setTimer)
-            endQuiz()
-           }
+
+            } //else {
+            //endQuiz()
+           //}
         }, 1000)
     }
 
-// set html section variables
+    
+
+// set html document variables
 
 var submitBtn = document.querySelector("#start-btn")
 var questionSection = document.querySelector(".question-section")
 var finalSection = document.querySelector(".final-section")
 var highScoreSection = document.querySelector(".highscore-page")
+var enterResultsBtn = document.getElementById("end-btn")
+var returnToQuizBtn = document.getElementById("refresh-btn")
+var clearScoreBtn = document.getElementById("clear-data-btn")
 
 
 // set question variables
@@ -70,10 +75,11 @@ var i = 0
 
 var quizStart = function () {
     titleDisplay()
-    setTimer()
+    if (i === 0) {
+        setTimer()
+    }
 
-    if (i > 4) {
-        clearInterval(setTimer)
+    if (i === 5) {
         endQuiz()
         return;
     }
@@ -110,7 +116,6 @@ var answerValidation = function (event) {
     i++
     questionSection.innerHTML = ""
     quizStart()
-
 }
 
 // end quiz section
@@ -125,18 +130,76 @@ function endQuiz () {
     var displayFinalSection = document.getElementsByClassName("final-section")
     finalSection.classList.remove("final-section")
 
-    var displayHighScoreSection = document.getElementsByClassName("highscore-page")
-    highScoreSection.classList.remove("highscore-page")
 
     // add input for initials at the end of the game
     var input = document.createElement("input")
-    input.setAttribute('type', 'text')
+    input.setAttribute('type','text')
     var enterInitials = document.getElementById("initials")
     enterInitials.append(input)
-    //debugger;
   }
 
-submitBtn.addEventListener("click", quizStart)
+   // highscore section
+  function enterResults() {
+
+      // highscore section will now display
+    var displayHighScoreSection = document.getElementsByClassName("highscore-page")
+    highScoreSection.classList.remove("highscore-page")
+  }
+
+  
+
+
+
+    // display of highscores (input results)
+
+    // return to quiz-btn will go back to start of quiz (add another event listener)
+
+    // clear highscores will delete the input data but stay on current page
+
+
+  
+
+    
+  // button sections 
+
+  // button that starts the quiz
+  submitBtn.addEventListener("click", quizStart)
+
+
+  
+  // button that saves the initial input
+ enterResultsBtn.addEventListener("click", enterResults)
+
+// return quiz button will display the start quiz page
+document.getElementById("refresh-btn").onclick = function () {
+    location.href = "https://kaysie04.github.io/Code-Quiz/";  
+};
+
+// clear highscore button that will delete the input data
+
+
+
+
+
+
+
+
+//var user = {
+    //firstName: firstNameInput.value.trim(),
+    //lastName: lastNameInput.value.trim(),
+    //email: emailInput.value.trim(),
+//password: passwordInput.value.trim()
+  //};
+ 
+ 
+  
+
+
+  // set new submission to local storage 
+ // localStorage.setItem("user",JSON.stringify(user))
+ //});
+  
+
 
 
 
