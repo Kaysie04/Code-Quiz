@@ -151,11 +151,29 @@ function endQuiz() {
   finalScoreSection.append(finalScoreDiv);
 }
 
+ // user input storage function
 function userInput() {
     localStorage.setItem(time, input.value)
+    enterResults()
     }
 
-// user input function
+    function enterResults() {
+  
+        var displayHighScoreSection =
+        document.getElementsByClassName("highscore-page");
+        highScoreSection.classList.remove("highscore-page");
+    
+        var resultDisplay = document.getElementById("result-section");
+        resultDisplay.style.display = "none";
+    
+        var highScoreOl = document.getElementById("highscore-ol")
+        var highScoreLi = document.createElement("li")
+        highScoreLi.textContent = userInput().value;
+        highScoreOl.append(highScoreLi);
+    
+    }
+
+
 
 
 
