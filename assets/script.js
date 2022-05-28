@@ -156,6 +156,7 @@ function userInput() {
     localStorage.setItem(time, input.value)
     enterResults()
     }
+   
 
     function enterResults() {
   
@@ -170,12 +171,7 @@ function userInput() {
         var highScoreLi = document.createElement("li")
         highScoreLi.textContent = userInput().value;
         highScoreOl.append(highScoreLi);
-    
     }
-
-
-
-
 
 // ENTER RESULTS SECTION
 
@@ -186,22 +182,6 @@ function userInput() {
 // I want the page to display the high scores
 
 // restyle the highscore page
-
-function enterResults() {
-  
-    var displayHighScoreSection =
-    document.getElementsByClassName("highscore-page");
-    highScoreSection.classList.remove("highscore-page");
-
-    var resultDisplay = document.getElementById("result-section");
-    resultDisplay.style.display = "none";
-
-    var highScoreOl = document.getElementById("highscore-ol")
-    var highScoreLi = document.createElement("li")
-    highScoreLi.textContent = userInput().value;
-    highScoreOl.append(highScoreLi);
-
-}
 
 // button sections
 
@@ -216,39 +196,3 @@ document.getElementById("refresh-btn").onclick = function () {
   location.href = "https://kaysie04.github.io/Code-Quiz/";
 };
 
-
-
-
-// function getUserName() {
-//     var nameField = document.getElementById('nameField').value;
-//     var result = document.getElementById('result');
-    
-//     if (nameField.length < 3) {
-//         result.textContent = 'Username must contain at least 3 characters';
-//         //alert('Username must contain at least 3 characters');
-//     } else {
-//         result.textContent = 'Your username is: ' + nameField;
-//         //alert(nameField);
-//     }
-// }
-    
-
-
-
-
-
-
-// clear highscores will delete the input data but stay on current page
-
-// clear highscore button that will delete the input data
-
-//var user = {
-//firstName: firstNameInput.value.trim(),
-//lastName: lastNameInput.value.trim(),
-//email: emailInput.value.trim(),
-//password: passwordInput.value.trim()
-//};
-
-// set new submission to local storage
-// localStorage.setItem("user",JSON.stringify(user))
-//});
