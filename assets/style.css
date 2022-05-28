@@ -1,4 +1,12 @@
 
+* { 
+    /*background-image: linear-gradient(#ff8c1a, #ff9933, #ffa64d, #ffbf80);*/
+    background: #cccccc;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
 /* top of page */
 header h1 {
     padding-top: 75px;
@@ -18,7 +26,7 @@ body {
 /* buttons */
 .button-style {
     list-style: none;
-    background-color:#0000cc;
+    background-image: linear-gradient(to bottom right,#1ad1ff, #0000ff,  #668cff);
     color:#e6ffe6;
     border-radius: 7px;
     width: 175px; 
@@ -44,7 +52,6 @@ body {
 
 #view-display {
     text-decoration: none;
-    color:#0000cc;
 }
 
 /* questions */
@@ -81,4 +88,15 @@ list-style: none;
     display: none;
  }
 
+.highscore-li-style {
+    border-style: none;
+    background: #a6a6a6;
+    color: white;
+    border-radius: 7px; 
+    height: 25px;  
+    font-size: 20px;		
+}
 
+#high-score-section h2 {
+    font-size: 35px;
+}

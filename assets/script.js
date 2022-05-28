@@ -166,7 +166,7 @@ function userInput() {
     
         var highScoreOl = document.getElementById("highscore-ol")
         var highScoreLi = document.createElement("li")
-        //highScoreLi.className
+        highScoreLi.className = "highscore-li-style"
         highScoreLi.textContent = (input.value + " - " + time)
         highScoreOl.append(highScoreLi);
 }
