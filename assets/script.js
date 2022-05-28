@@ -159,9 +159,8 @@ function endQuiz() {
   if (input.value === "" || input.value > 3 ) {
     return alert ("Please enter valid input. Initials must be atleast 1 character");
   }
-        
-  var highScoreStorage = { Score: time, Initials: input.value }                  
-        localStorage.setItem("highScoreStorage",JSON.stringify(highScoreStorage))
+  localStorage.setItem( time, input.value)
+  
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
         var resultDisplay = document.getElementById("result-section");
@@ -169,10 +168,9 @@ function endQuiz() {
         var highScoreOl = document.getElementById("highscore-ol")
         var highScoreLi = document.createElement("li")
         highScoreLi.className = "highscore-li-style"
-        highScoreLi.textContent = localStorage.getItem(highScoreStorage)
+        highScoreLi.textContent = localStorage.getItem( time, input.value)
         highScoreOl.append(highScoreLi);
 }
-
 
 // button that starts the quiz
 submitBtn.addEventListener("click", quizStart);
