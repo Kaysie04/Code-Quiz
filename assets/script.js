@@ -94,10 +94,13 @@ var quizStart = function () {
     setTimer();
   }
 
-  if (i === 5) {
+  if (i === 5){
     endQuiz();
     return;
   }
+
+
+
   var questionOneDiv = document.createElement("div");
   questionOneDiv.textContent = questionArray[i].question;
   questionOneDiv.className = "question-div";
@@ -148,21 +151,17 @@ function endQuiz() {
   var finalScoreSection = document.getElementById("score");
   var finalScoreDiv = document.createElement("div");
   finalScoreDiv.textContent = time;
-  finalScoreSection.append(finalScoreDiv);
+  finalScoreSection.append(finalScoreDiv)
 }
 
  // user input storage function
-function userInput() {
-    localStorage.setItem(time, input.value)
-
-    // var playerScore = {time, input.value}
-    // localStorage.setItem("playerScore", JSON.parse(playerScore));
-    // var retrieveScore = localStorage.getItem("playerScore")
-    // console.log("retrieveScore", JSON.parse(retrievedScore));
-    
-
-    
-    // ENTER RESULTS SECTION
+ function userInput() {
+  if (input.value === "" || input.value > 3 ) {
+    return alert ("Please enter valid input. Initials must be atleast 1 character");
+  }
+        
+  var highScoreStorage = { Score: time, Initials: input.value }                  
+        localStorage.setItem("highScoreStorage",JSON.stringify(highScoreStorage))
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
         var resultDisplay = document.getElementById("result-section");
@@ -170,9 +169,10 @@ function userInput() {
         var highScoreOl = document.getElementById("highscore-ol")
         var highScoreLi = document.createElement("li")
         highScoreLi.className = "highscore-li-style"
-        highScoreLi.textContent = (input.value + " - " + time)
+        highScoreLi.textContent = localStorage.getItem(highScoreStorage)
         highScoreOl.append(highScoreLi);
 }
+
 
 // button that starts the quiz
 submitBtn.addEventListener("click", quizStart);
@@ -190,6 +190,7 @@ document.getElementById("refresh-btn").onclick = function () {
 // highscore section will now display ////////
 // I want the quiz complete display to go away ///////
 // time display removed ////////
+//// not allow blank input for initials to be submitted
 
 // I want the page to display the high scores
 
@@ -197,3 +198,7 @@ document.getElementById("refresh-btn").onclick = function () {
 
 // button sections
 
+ // var playerScore = {time, input.value}
+    // localStorage.setItem("playerScore", JSON.parse(playerScore));
+    // var retrieveScore = localStorage.getItem("playerScore")
+    // console.log("retrieveScore", JSON.parse(retrievedScore));
