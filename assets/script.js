@@ -154,23 +154,25 @@ function endQuiz() {
  // user input storage function
 function userInput() {
     localStorage.setItem(time, input.value)
+
+    // var playerScore = {time, input.value}
+    // localStorage.setItem("playerScore", JSON.parse(playerScore));
+    // var retrieveScore = localStorage.getItem("playerScore")
+    // console.log("retrieveScore", JSON.parse(retrievedScore));
+    
+
     
     // ENTER RESULTS SECTION
-  
-        var displayHighScoreSection =
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
-    
         var resultDisplay = document.getElementById("result-section");
         resultDisplay.style.display = "none";
-    
         var highScoreOl = document.getElementById("highscore-ol")
         var highScoreLi = document.createElement("li")
         highScoreLi.className = "highscore-li-style"
         highScoreLi.textContent = (input.value + " - " + time)
         highScoreOl.append(highScoreLi);
 }
-    
 
 // button that starts the quiz
 submitBtn.addEventListener("click", quizStart);

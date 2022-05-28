@@ -24,15 +24,16 @@ body {
 }
 
 /* buttons */
+
 .button-style {
     list-style: none;
-    background-image: linear-gradient(to bottom right,#1ad1ff, #0000ff,  #668cff);
+    background-image: linear-gradient(to bottom right,#1a1a1a, #333333,  #4d4d4d);
     color:#e6ffe6;
     border-radius: 7px;
     width: 175px; 
     border: none;
-    padding: 5px;
-    margin: 10px;
+    padding: 5px; 
+    margin: 7px;
 }
 
 .button-style:active{
@@ -89,14 +90,23 @@ list-style: none;
  }
 
 .highscore-li-style {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;        
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
     border-style: none;
     background: #a6a6a6;
     color: white;
     border-radius: 7px; 
     height: 25px;  
-    font-size: 20px;		
+    font-size: 20px;
+    width: 400px;
+    margin-left: 400px;	
 }
 
 #high-score-section h2 {
     font-size: 35px;
+    margin-right:75px;
 }
