@@ -154,11 +154,8 @@ function endQuiz() {
  // user input storage function
 function userInput() {
     localStorage.setItem(time, input.value)
-    enterResults()
-    }
-   
-
-    function enterResults() {
+    
+    // ENTER RESULTS SECTION
   
         var displayHighScoreSection =
         document.getElementsByClassName("highscore-page");
@@ -169,21 +166,11 @@ function userInput() {
     
         var highScoreOl = document.getElementById("highscore-ol")
         var highScoreLi = document.createElement("li")
-        highScoreLi.textContent = userInput().value;
+        //highScoreLi.className
+        highScoreLi.textContent = (input.value + " - " + time)
         highScoreOl.append(highScoreLi);
-    }
-
-// ENTER RESULTS SECTION
-
-// highscore section will now display ////////
-// I want the quiz complete display to go away ///////
-// time display removed ////////
-
-// I want the page to display the high scores
-
-// restyle the highscore page
-
-// button sections
+}
+    
 
 // button that starts the quiz
 submitBtn.addEventListener("click", quizStart);
@@ -195,4 +182,16 @@ enterResultsBtn.addEventListener("click", userInput);
 document.getElementById("refresh-btn").onclick = function () {
   location.href = "https://kaysie04.github.io/Code-Quiz/";
 };
+
+
+
+// highscore section will now display ////////
+// I want the quiz complete display to go away ///////
+// time display removed ////////
+
+// I want the page to display the high scores
+
+// restyle the highscore page
+
+// button sections
 
