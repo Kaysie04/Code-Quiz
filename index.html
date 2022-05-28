@@ -8,38 +8,36 @@
     <link href = "assets/style.css" rel="stylesheet">
 </head>
 <body>
-
     <header> 
         <div>
            <!-- button does not work right now!!!!-->
             <p><a href="#highscore-section" id="view-display">View High Scores </a> </p>
         </div>
-
         <div>
             <p id="time-display"></p>
         </div>
-        
         <div id="quiz-title">
             <h1> Coding Quiz Challenge</h1>
             <p>
             Try to answer the following code-related questions within the time limit.
             Keep in mind that incorrect answers will penalize your score/time by 5 seconds!
             </p>
-
             <button type="button" class="button-style" id="start-btn">Start Quiz!</button>
         </div>
         </header>
 
   
-        <!-- question 1--> 
-        <section class="question-section" id="question-id"></section>
+    <!-- question 1--> 
+    <section class="question-section" id="question-id"></section>
 
-<!-- end of quiz section-->
+    <!-- end of quiz section-->
     <section class="final-section" id="result-section">
         <p id="result-title">Quiz Complete!</p>
         <p class="score-initials" id="score"> Your Final Score is:</p>
+        <span id="enter-initials-line">
         <p class =score-initials id="initials">Enter your initials:</p>
         <input id="input-box" value="">
+        </span>
         <button type="button" class="button-style" id="end-btn">Enter Results</button>  
     </section>
 
@@ -47,7 +45,6 @@
     <section class="highscore-page" id="high-score-section">
         <h2> High Scores!</h2> 
         <ol id="highscore-ol"></ol>
-        <!--<button type="button" class="button-style" id="refresh-btn">Return to Quiz</button>-->
         <button type="button" class="button-style" id="refresh-btn" onclick= "location.href = https:'//kaysie04.github.io/Code-Quiz/'">Return to Quiz</button>
         <button type="button" class="button-style" id="clear-data-btn">Clear highscores</button>
     </section>

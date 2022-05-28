@@ -28,7 +28,7 @@ body {
 .button-style {
     list-style: none;
     background-image: linear-gradient(to bottom right,#1a1a1a, #333333,  #4d4d4d);
-    color:#e6ffe6;
+    color: white;
     border-radius: 7px;
     width: 175px; 
     border: none;
@@ -36,13 +36,12 @@ body {
     margin: 7px;
 }
 
-.button-style:active{
-    background-color: #cc00ff;
-
+.button-style:active {
+    background-image: linear-gradient(to bottom right, #0000ff, #3333ff, #4d4dff);
 }
 
 .button-style:hover {
-    background-color:#cc00ff;
+    background-image:linear-gradient(to bottom right, #0000ff, #3333ff, #4d4dff);
 }
 
 /* starting page */
@@ -85,6 +84,12 @@ list-style: none;
      font-weight:bold;
  }
 
+ #enter-initials-line {
+     display: flex;
+     align-items: center;
+     margin-left:450px;
+ }
+
  .highscore-page {
     display: none;
  }
@@ -109,4 +114,13 @@ list-style: none;
 #high-score-section h2 {
     font-size: 35px;
     margin-right:75px;
+}
+
+#input-box {
+    border-style: none;
+    border-radius: 7px;
+    width: 175px; 
+    background-image: linear-gradient(to bottom right,#1a1a1a, #333333,  #4d4d4d);
+    padding: 5px; 
+    margin-left: 20px;
 }
