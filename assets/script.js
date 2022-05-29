@@ -161,11 +161,10 @@ function endQuiz() {
   }
   
   var scores = {
-    initials: input.value,
-    score: time
+    "initials": input.value,
+    "score": time
   }
-  localStorage.setItem( "scores", JSON.stringify(scores) );
-  
+        localStorage.setItem( "scores", JSON.stringify(scores));
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
         var resultDisplay = document.getElementById("result-section");
@@ -173,8 +172,7 @@ function endQuiz() {
         var highScoreOl = document.getElementById("highscore-ol")
         var highScoreLi = document.createElement("li")
         highScoreLi.className = "highscore-li-style"
-        highScoreLi.textContent = localStorag.getItem(scores)
-        // JSON.parse(localStorage.getItem(scores));
+        highScoreLi.textContent = JSON.parse(localStorage.getItem("scores")).initials + " " + JSON.parse(localStorage.getItem("scores")).score
         highScoreOl.append(highScoreLi);
 }
 
