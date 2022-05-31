@@ -154,6 +154,14 @@ function endQuiz() {
   finalScoreSection.append(finalScoreDiv)
 }
 
+// refresh button 
+
+    document.getElementById("refresh-btn").onclick = function () {
+        location.href = "https:'//kaysie04.github.io/Code-Quiz/";
+    };
+
+
+
  // user input storage function
  function userInput() {
   if (input.value === "") {
@@ -163,20 +171,51 @@ function endQuiz() {
   var scores = {
     "initials": input.value,
     "score": time
-  }
 
+  }
+        var storage = JSON.parse(localStorage.getItem("scores"))
+
+        if ( storage === null  || storage === undefined) {
+          storage = []
+          storage.push(scores)
+        }
+        else {
+          storage.push(scores)
+        }
         
-        localStorage.setItem( "scores", JSON.stringify(scores));
+        localStorage.setItem( "scores", JSON.stringify(storage));
+
+        var getStorage = JSON.parse(localStorage.getItem("scores"))
+
+       
+
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
         var resultDisplay = document.getElementById("result-section");
         resultDisplay.style.display = "none";
         var highScoreOl = document.getElementById("highscore-ol")
-        var highScoreLi = document.createElement("li")
-        highScoreLi.className = "highscore-li-style"
-        highScoreLi.textContent = JSON.parse(localStorage.getItem("scores")).initials + " " + JSON.parse(localStorage.getItem("scores")).score
-        highScoreOl.append(highScoreLi);
+        getStorage.sort(function(a, b) {
+          return b.score - a.score ;
+        });
+       
+       
+      
+        for (let i = 0; i < getStorage.length; i++) {
+          var highScoreLi = document.createElement("li")
+          highScoreOl.append(highScoreLi);
+         
+          highScoreLi.textContent = getStorage[i].initials + " " + getStorage[i].score
+          highScoreLi.className = "highscore-li-style"
+        }
 }
+
+
+
+        
+
+
+
+
 
 // button that starts the quiz
 submitBtn.addEventListener("click", quizStart);
