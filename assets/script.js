@@ -156,7 +156,7 @@ function endQuiz() {
 
  // user input storage function
  function userInput() {
-  if (input.value === "" || input.value > 3 ) {
+  if (input.value === "") {
     return alert ("Please enter valid input. Initials must be atleast 1 character");
   }
   
@@ -164,6 +164,8 @@ function endQuiz() {
     "initials": input.value,
     "score": time
   }
+
+        
         localStorage.setItem( "scores", JSON.stringify(scores));
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
@@ -186,21 +188,3 @@ enterResultsBtn.addEventListener("click", userInput);
 document.getElementById("refresh-btn").onclick = function () {
   location.href = "https://kaysie04.github.io/Code-Quiz/";
 };
-
-
-
-// highscore section will now display ////////
-// I want the quiz complete display to go away ///////
-// time display removed ////////
-//// not allow blank input for initials to be submitted
-
-// I want the page to display the high scores
-
-// restyle the highscore page
-
-// button sections
-
- // var playerScore = {time, input.value}
-    // localStorage.setItem("playerScore", JSON.parse(playerScore));
-    // var retrieveScore = localStorage.getItem("playerScore")
-    // console.log("retrieveScore", JSON.parse(retrievedScore));
