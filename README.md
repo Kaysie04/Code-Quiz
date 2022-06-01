@@ -9,7 +9,7 @@ CSS
 JavaScript
 
 ## Webpage Display
-![Webpage Image](/Code-Quiz/assets/images/readmeimage.png)
+![Webpage Image](assets/images/readmeimage.png)
 
 ## Website Link
 https://kaysie04.github.io/Code-Quiz/
