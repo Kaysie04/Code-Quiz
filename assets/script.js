@@ -1,12 +1,10 @@
 // remove title page when quiz starts
-
 function titleDisplay() {
   var quizTitleDisplay = document.getElementById("quiz-title");
   quizTitleDisplay.style.display = "none";
 }
 
 // timer interval
-
 var time = 60;
 function setTimer() {
   setInterval(function () {
@@ -21,7 +19,6 @@ function setTimer() {
 }
 
 // set html document variables
-
 var submitBtn = document.querySelector("#start-btn");
 var questionSection = document.querySelector(".question-section");
 var finalSection = document.querySelector(".final-section");
@@ -32,7 +29,6 @@ var enterResultsBtn = document.getElementById("end-btn");
 var input = document.getElementById("input-box")
 
 // set question variables
-
 var questionOne = {
   question: "Commonly used data types DO NOT include:",
   choices: ["A. strings ", "B. booleans", "C. alerts", "D. numbers"],
@@ -77,6 +73,7 @@ var questionFive = {
   answer: "D. all of the above",
 };
 
+// create question array with set question variables
 var questionArray = [
   questionOne,
   questionTwo,
@@ -99,13 +96,13 @@ var quizStart = function () {
     return;
   }
 
-
-
+// question array
   var questionOneDiv = document.createElement("div");
   questionOneDiv.textContent = questionArray[i].question;
   questionOneDiv.className = "question-div";
   questionSection.append(questionOneDiv);
 
+  // choices array
   for (j = 0; j < questionArray[i].choices.length; j++) {
     var choicesDiv = document.createElement("button");
     choicesDiv.textContent = questionArray[i].choices[j];
@@ -130,8 +127,7 @@ var answerValidation = function (event) {
   quizStart();
 };
 
-//quiz complete section
-    
+//quiz complete section 
 function endQuiz() {
   clearInterval(setTimer);
 
@@ -155,12 +151,9 @@ function endQuiz() {
 }
 
 // refresh button 
-
     document.getElementById("refresh-btn").onclick = function () {
         location.href = "https:'//kaysie04.github.io/Code-Quiz/";
     };
-
-
 
  // user input storage function
  function userInput() {
@@ -173,8 +166,10 @@ function endQuiz() {
     "score": time
 
   }
+      // set variable to current localStorage values
         var storage = JSON.parse(localStorage.getItem("scores"))
 
+        // check to see if storage is empty or not
         if ( storage === null  || storage === undefined) {
           storage = []
           storage.push(scores)
@@ -183,23 +178,27 @@ function endQuiz() {
           storage.push(scores)
         }
         
+        // save value from quiz
         localStorage.setItem( "scores", JSON.stringify(storage));
 
+        // set variable to new localStorage values
         var getStorage = JSON.parse(localStorage.getItem("scores"))
 
        
-
+        // removing classes to achieve a certain page to display
         document.getElementsByClassName("highscore-page");
         highScoreSection.classList.remove("highscore-page");
         var resultDisplay = document.getElementById("result-section");
         resultDisplay.style.display = "none";
         var highScoreOl = document.getElementById("highscore-ol")
+
+        // sorts storage values from high to low
         getStorage.sort(function(a, b) {
           return b.score - a.score ;
         });
        
        
-      
+        // use for loop to display continuous new scores in li elements
         for (let i = 0; i < getStorage.length; i++) {
           var highScoreLi = document.createElement("li")
           highScoreOl.append(highScoreLi);
@@ -207,14 +206,13 @@ function endQuiz() {
           highScoreLi.textContent = getStorage[i].initials + " " + getStorage[i].score
           highScoreLi.className = "highscore-li-style"
         }
+
+         // clear-scores quiz button will delete highscores from localStorage
+          document.getElementById("clear-scores-btn").onclick = function () {
+          localStorage.clear()
+          highScoreOl.remove(highScoreLi)
+};
 }
-
-
-
-        
-
-
-
 
 
 // button that starts the quiz
